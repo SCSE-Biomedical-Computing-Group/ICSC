@@ -14,13 +14,7 @@ The code repo for the iterative consensus spectral clustering that performs dete
 
 * `data/subject_sessions/` folder containing data for 2 subjects, containing 64 synthetic scan session samples in the form of `data/subject_sessions/subject_*/S*_corr.npy`. You can use this data to obtain subject-level modularizations (and session/individual-level modularizations).
 
-2. The codes reside in the  `codes` folder. We give two scripts to derive group-level modularizations and subject-level modularizations. You can modify the following parameters in the respective files to modify the runs as per your requirement:
-  - NUM_NODES: the number of ROIs considered
-  - NUM_RUNS: the number of independent runs you wish to consider
-  - NUM_THREADS: the number of cores you want to use. Is useless if NUM_RUNS < 2
-  - DATASET: the folder where the dataset is stored.
-  - MAX_LABELS, MIN_LABELS: The range for the number of modules for the subject/scans under considerations
-  - SAVE_DIR: The directory where the results will be saved. 
+2. The codes reside in the  `codes` folder. We give two scripts to derive group-level modularizations and subject-level modularizations.
 
 * `codes/group_level/` folder contains the code to obtain group-level modularizations from subject connectivity matrices. As a starting point we have added dummy data in `data/multiple_subjects/`. The code to derive group-level modularizations (and other metrics) can be run by
 
@@ -34,3 +28,10 @@ The code repo for the iterative consensus spectral clustering that performs dete
   python3 ICSC_subject_level.py
   ```
 
+You can modify the following parameters in `ICSC_subject_level.py` or `ICSC_group_level.py` files to modify the runs as per your requirement:
+  -- `NUM_NODES`: the number of ROIs considered
+  -- `NUM_RUNS`: the number of independent runs you wish to consider
+  -- `NUM_THREADS`: the number of cores you want to use. Is useless if NUM_RUNS < 2
+  -- `DATASET`: the folder where the dataset is stored.
+  -- `MAX_LABELS, MIN_LABELS`: The range for the number of modules for the subject/scans under considerations
+  -- `SAVE_DIR`: The directory where the results will be saved. 
