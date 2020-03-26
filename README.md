@@ -24,13 +24,13 @@ The code repo for the iterative consensus spectral clustering that performs dete
 
 * `codes/group_level/` folder contains the code to obtain group-level modularizations from subject connectivity matrices. As a starting point we have added dummy data in `data/multiple_subjects/`. The code to derive group-level modularizations (and other metrics) can be run by
 
-```
-python3 ICSC_group_level.py
-```
+  ```
+  python3 ICSC_group_level.py
+  ```
 
 * `codes/subject_level/` folder contains the code to obtain subject-level modularizations from multiples scans of the same subject. As a starting point we have added dummy data in `data/subject_sessions/subject_*/S*_corr.npy`. The code to derive subject-level modularizations (and other metrics) can be run by:
 
-```
-python3 ICSC_subject_level.py
-```
+  ```
+  python3 ICSC_subject_level.py
+  ```
 
