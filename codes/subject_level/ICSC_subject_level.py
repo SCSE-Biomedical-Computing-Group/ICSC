@@ -36,11 +36,11 @@ def single_run(params):
 	'''
 
 	for count, individual in enumerate(individuals_list):
-		all_individuals_all_L_k[individual], individual_mod_matrix, individual_calc_labels = get_initial_modularizations(str(count), individuals_data[individual], max_labels, min_labels)
+		all_individuals_all_L_k[individual], individual_mod_matrix, individual_calc_labels = get_initial_modularizations(str(count), individuals_data[individual], num_nodes, max_labels, min_labels)
 		group_consensus_matrix += individual_mod_matrix
 		individual_labels[individual] = individual_calc_labels
 
-	_, _, group_consensus_labels = get_initial_modularizations('group', group_consensus_matrix, max_labels, min_labels)
+	_, _, group_consensus_labels = get_initial_modularizations('group', group_consensus_matrix, num_nodes, max_labels, min_labels)
 
 	'''
 	%%%%%%%%%%%%%%%%%%%%
@@ -96,7 +96,7 @@ def single_run(params):
 			for node, label in enumerate(individual_labels[individual]):
 				partition[node] = label
 			
-			individual_mod_matrix = get_consensus_matrix(partition)
+			individual_mod_matrix = get_consensus_matrix(partition, num_nodes)
 			group_consensus_matrix += individual_mod_matrix
 		
 		iteration += 1
